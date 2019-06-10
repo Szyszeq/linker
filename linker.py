@@ -7,16 +7,16 @@ def randomizer(length):
     return ''.join(random.choice(znaki) for i in range(length))
 
 linksDict={}
-decision = input("Hey there! If you want to generate a new link, type L. If you want to look for your link type S. If you want to exit type E :)")
+decision = input("Hey there! If you want to generate a new link, type L. If you want to look for your link type S. If you want to exit type E :)\n")
 while exit != 1:
     if decision.lower() == "l":
-        userLink = input("Please enter the link you want to shorten:")
+        userLink = input("Please enter the link you want to shorten: ")
         linksDict[userLink] = "http://linker.py/" + randomizer(6)
         print(linksDict.get(userLink))
     elif decision.lower() == "s":
-        userLink = input("Please enter your link:")
+        userLink = input("Please enter your link: ")
         if userLink in linksDict:
-            print("Your link is:" + linksDict.get(userLink))
+            print("Your link is: " + linksDict.get(userLink))
         else:
             print("We don't have that link yet :(")
     elif decision.lower() == "e":
@@ -24,4 +24,4 @@ while exit != 1:
         break
     else:
         print("Wrong command, try again!")
-    decision = input("So what's next? New link? Type L. Search for link? Type S. Exit? Type E.")
+    decision = input("So what's next? New link? Type L. Search for link? Type S. Exit? Type E.\n")
